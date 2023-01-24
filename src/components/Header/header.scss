@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 40px auto 60px auto;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding-bottom: 20px;
+
+  h2 {
+    font-size: 35px;
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .wishlist {
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

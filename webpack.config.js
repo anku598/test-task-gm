@@ -20,7 +20,7 @@ module.exports = {
     liveReload: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.css'],
+    extensions: ['.js', '.jsx', '.json', '.scss'],
   },
   module: {
     rules: [
@@ -31,12 +31,22 @@ module.exports = {
       },
 
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader'
-        ]
-      }
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('node-sass'),
+              sassOptions: {
+                outputStyle: 'expanded',
+                sourceMap: true,
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
