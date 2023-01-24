@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import './moviedetails.scss'
+import { WishlistContext } from './../WishlistContext';
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
 
-  const [wishlist, setWishlist] = useState([]);
+  const { wishlist, setWishlist } = useContext(WishlistContext);
 
 
 
@@ -41,7 +42,7 @@ const MovieDetails = () => {
     const movieAlreadyAdded = wishlistArray.find(item => item.id === movie.id);
     if (movieAlreadyAdded) {
       toast.error("This movie is already in your wishlist", {
-        position: "top-right",
+        position: "top-left",
         autoClose: 800,
         hideProgressBar: false,
         closeOnClick: true,
@@ -58,7 +59,7 @@ const MovieDetails = () => {
     localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
     setWishlist(updatedWishlist);
     toast.success("Movie added to wishlist!", {
-      position: "top-right",
+      position: "top-left",
       autoClose: 800,
       hideProgressBar: false,
       closeOnClick: true,
@@ -79,11 +80,11 @@ const MovieDetails = () => {
       <div className="column-right">
         <p className='title'> {movie.title}</p>
         <p className='release-date'>Release Date : {movie.release_date}</p>
-        {movie.genres && movie.genres.map((genre) => {
-          <div className='genre-lists'>
-            <p>{{ genre }}</p>
-          </div>
-        })}
+        <div className='genre-lists' >
+          <h3>Genere:</h3> {movie.genres && movie.genres.map((genre) => (
+            <p className='list-item' key={genre.id}>{genre.name}</p>
+          ))}
+        </div>
         <p className='overview'>{movie.overview}</p>
         <button className='w-btn' onClick={() => handleAddToWishlist(movie)}>Add to wishlist</button>
       </div>

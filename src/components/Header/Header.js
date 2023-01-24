@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import './header.scss'
 import { Link } from 'react-router-dom';
+import { WishlistContext } from './../WishlistContext';
 
 const Header = () => {
-  const [wishlist, setWishlist] = useState([]);
-
-  useEffect(() => {
-    const storedWishlist = localStorage.getItem("wishlist");
-    if (storedWishlist) {
-      setWishlist(JSON.parse(storedWishlist));
-    }
-  }, []);
+  const { wishlist } = useContext(WishlistContext)
   return (
 
     <div className="header">
       <Link to={'/'}>
         <h2>Movie Flix</h2>
       </Link>
-      <p className="wishlist">WishList</p>
+      <Link to={'/wishlist'}>
+        <p className="wishlist">WishList ({wishlist.length})</p>
+      </Link>
     </div>
   );
 }
