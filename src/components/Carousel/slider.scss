@@ -1,3 +1,4 @@
+/* this is react-slick librery styling*/
 .slick-list,
 .slick-slider,
 .slick-track {
@@ -20,7 +21,8 @@
   -khtml-user-select: none;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
+  margin-bottom: 50px;
 }
 
 .slick-list {
@@ -97,4 +99,28 @@
 
 .slick-arrow.slick-hidden {
   display: none
+}
+
+
+// custom styling
+
+.slick-arrow {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background: #2b2b2b;
+  color: #fff;
+  padding: 10px 15px;
+  z-index: 20;
+  cursor: pointer;
+  max-width: 130px;
+  width: 100%;
+
+  &.slick-prev {
+    right: 160px !important;
+  }
+}
+
+.slick-list {
+  padding-bottom: 50px;
 }

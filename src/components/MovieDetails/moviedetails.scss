@@ -1,0 +1,76 @@
+.details-brief {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .column-left {
+    flex-basis: 40%;
+
+    .img-wrapper {
+      width: 75%;
+      margin-left: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .column-right {
+    flex-basis: 50%;
+  }
+}
+
+.title {
+  font-size: 35px;
+  text-transform: capitalize;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.release-date {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.overview {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 25px;
+}
+
+.w-btn {
+  background: #2b2b2b;
+  color: #fff;
+  max-width: 300px;
+  width: 100%;
+  padding: 15px 20px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.genre-lists {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+
+  h3 {
+    margin-right: 10px;
+    color: #2b2b2b;
+    font-weight: bold;
+  }
+
+  p {
+    margin-right: 10px;
+    background: lightgray;
+    padding: 5px 10px;
+    color: #2b2b2b;
+
+  }
+}
