@@ -1,4 +1,4 @@
-@import '~react-toastify/dist/ReactToastify.css';
+@import "~react-toastify/dist/ReactToastify.css";
 
 * {
   margin: 0;
@@ -9,7 +9,6 @@
 body {
   width: 100%;
   height: 100%;
-
 }
 
 img {
@@ -30,16 +29,54 @@ a {
   text-transform: uppercase;
   margin-bottom: 40px;
   margin-top: 50px;
+  @media (max-width: 768px) {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
 }
 
 .wishlists {
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 
-  a {
+  .flex-container {
     max-width: 300px;
     width: 100%;
     margin-right: 15px;
 
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+      margin-right: 0;
+    }
   }
+
+  .remove-btn {
+    background: #2b2b2b;
+    border: none;
+    color: #fff;
+    max-width: 100%;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 17px;
+    font-weight: bold;
+    @media (max-width: 768px) {
+      font-size: 15px;
+      padding: 15px 10px;
+      max-width: 100%;
+    }
+  }
+}
+
+.empty {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 50px;
+  width: 100%;
 }
