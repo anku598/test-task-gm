@@ -15,8 +15,8 @@ const WishList = () => {
     <div className='container-wrapper wishlists'>
       { wishlist.length > 0 ?
       wishlist && wishlist.map((movie, index) => (
-        <div className="flex-container">
-          <Link key={movie.id} to={`/movie/${movie.id}`}>
+        <div className="flex-container" key={movie.id}>
+          <Link  to={`/movie/${movie.id}`}>
           <div className="img-wrapper">
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
           </div>
@@ -26,7 +26,7 @@ const WishList = () => {
 
 <button className="remove-btn" onClick={() => handleRemoveFromWishlist(index)}>Remove From Wishlist</button>
         </div>
-      )) : <div className="empty">Your wishlist is empty</div> }
+      )) : <div className="empty">Your wishlist are empty</div> }
 
     
     </div>
