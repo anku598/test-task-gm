@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
-import './moviedetails.scss'
+import { toast, ToastContainer } from 'react-toastify';
 import { WishlistContext } from './../WishlistContext';
+import './moviedetails.scss';
 
 const MovieDetails = () => {
   const { id } = useParams();
